@@ -17,9 +17,9 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* ActioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ActioTests.m */; };
 		33C7F8365A2DD180A353640A /* libPods-Actio-ActioTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8170FC897EFDD3EDCDE8B6 /* libPods-Actio-ActioTests.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		9558D389877221CAEB9D8C04 /* libPods-Actio-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C272A304BB9C1687B513939 /* libPods-Actio-tvOSTests.a */; };
 		B4C1942F67F76AA84DB6D264 /* libPods-Actio-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31A939C1D37CB34B5C5209C6 /* libPods-Actio-tvOS.a */; };
+		D0A63992259D21FA00EE51E8 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A63991259D21FA00EE51E8 /* BootSplash.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,10 +61,10 @@
 		69F1706BC6D8AAD856D075A5 /* Pods-Actio-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Actio-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Actio-tvOSTests/Pods-Actio-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6C272A304BB9C1687B513939 /* libPods-Actio-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Actio-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D8170FC897EFDD3EDCDE8B6 /* libPods-Actio-ActioTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Actio-ActioTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Actio/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		935BF706539B66DD67301052 /* libPods-Actio.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Actio.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EF8983053296D2A001F207 /* Pods-Actio-ActioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Actio-ActioTests.release.xcconfig"; path = "Target Support Files/Pods-Actio-ActioTests/Pods-Actio-ActioTests.release.xcconfig"; sourceTree = "<group>"; };
 		A120C25C3845EC3E2DEEFFA1 /* Pods-Actio-ActioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Actio-ActioTests.debug.xcconfig"; path = "Target Support Files/Pods-Actio-ActioTests/Pods-Actio-ActioTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D0A63991259D21FA00EE51E8 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = Actio/BootSplash.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -125,12 +125,12 @@
 		13B07FAE1A68108700A75B9A /* Actio */ = {
 			isa = PBXGroup;
 			children = (
+				D0A63991259D21FA00EE51E8 /* BootSplash.storyboard */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = Actio;
@@ -194,7 +194,6 @@
 				69F1706BC6D8AAD856D075A5 /* Pods-Actio-tvOSTests.debug.xcconfig */,
 				1332ED454C661C23DEC5A76E /* Pods-Actio-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -340,7 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				D0A63992259D21FA00EE51E8 /* BootSplash.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
