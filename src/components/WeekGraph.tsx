@@ -1,44 +1,50 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { days, formatWeekRange } from '../lib/format';
 import {
   brandAccent,
   brandBackground,
   fontStandard,
   brandAccentLight,
 } from '../styles/colors';
+import { HealthItem } from '../types/health';
 
-export default function WeekGraph() {
-  const points = [
-    { day: 'Monday', points: 8 },
-    { day: 'Tuesday', points: 5 },
-    { day: 'Wednesday', points: 3 },
-    { day: 'Thursday', points: undefined },
-    { day: 'Friday', points: undefined },
-    { day: 'Saturday', points: undefined },
-    { day: 'Sunday', points: undefined },
-  ];
+interface Props {
+  data: HealthItem[];
+}
+
+export default function WeekGraph({ data }: Props) {
   return (
     <View style={styles.container}>
-      <Text style={styles.h2}>21 - 27 DEC 2020</Text>
+      <Text style={styles.h2}>
+        {formatWeekRange(data[data.length - 1].date)}
+      </Text>
       <Text style={styles.h1}>16 points</Text>
       <View style={styles.barsContainer}>
-        {points.map((val) => (
-          <View style={styles.barContainer} key={`bar-${val.day}`}>
-            <View
-              style={[
-                styles.barBackground,
-                { height: val.points !== undefined ? 100 : 0 },
-              ]}>
+        {days.map((day, index) => {
+          const val = data[data.length - 1 - index] || {};
+          const points =
+            val.stepsPoints > val.workoutPoints
+              ? val.stepsPoints
+              : val.workoutPoints;
+          return (
+            <View style={styles.barContainer} key={`bar-${day}`}>
               <View
                 style={[
-                  styles.bar,
-                  { height: val.points ? (val.points / 8) * 100 : 2 },
-                ]}
-              />
+                  styles.barBackground,
+                  { height: points !== undefined ? 100 : 0 },
+                ]}>
+                <View
+                  style={[
+                    styles.bar,
+                    { height: points ? (points / 8) * 100 : 2 },
+                  ]}
+                />
+              </View>
+              <Text style={styles.day}>{day.charAt(0).toUpperCase()}</Text>
             </View>
-            <Text style={styles.day}>{val.day.charAt(0).toUpperCase()}</Text>
-          </View>
-        ))}
+          );
+        })}
       </View>
     </View>
   );

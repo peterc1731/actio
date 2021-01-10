@@ -2,12 +2,31 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { brandBackground, fontStandard } from '../styles/colors';
 
-export default function SummaryBox() {
+interface Props {
+  workoutPoints: number;
+  stepsPoints: number;
+  steps: number;
+}
+
+export default function SummaryBox({
+  workoutPoints,
+  stepsPoints,
+  steps,
+}: Props) {
+  const largestPoints =
+    stepsPoints > workoutPoints ? stepsPoints : workoutPoints;
   return (
     <View style={styles.container}>
-      <Text style={styles.h2}>Summary</Text>
-      <Text style={styles.h1}>8 points gained by walking</Text>
-      <Text style={styles.h3}>You've reached your daily goal.</Text>
+      <Text style={styles.h2}>Today</Text>
+      <Text style={styles.h1}>
+        {largestPoints} points gained by{' '}
+        {stepsPoints > workoutPoints ? 'walking' : 'workout'}
+      </Text>
+      <Text style={styles.h3}>
+        {largestPoints === 8
+          ? "You've reached your daily goal."
+          : `${12500 - steps} more steps to reach your daily goal`}
+      </Text>
     </View>
   );
 }
@@ -25,6 +44,7 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 4,
     shadowOpacity: 0.1,
+    marginBottom: 30,
   },
   h1: {
     color: fontStandard,

@@ -1,29 +1,58 @@
 import React from 'react';
 import { SectionList, StyleSheet, Text, View } from 'react-native';
+import { formatDate, formatSteps, getWorkoutText } from '../lib/format';
 import { fontStandard } from '../styles/colors';
+import { HealthItem } from '../types/health';
 
-export default function WeekList() {
-  const data = [
-    { title: 'TODAY', data: [{ text: '6,500 steps', points: 3 }] },
-    {
-      title: 'YESTERDAY',
+interface Props {
+  data: HealthItem[];
+}
+
+export default function WeekList({ data }: Props) {
+  const sections = data.map((item) => {
+    const title = formatDate(item.date);
+    if (item.workoutPoints === 0) {
+      return {
+        title,
+        data: [
+          {
+            points: item.stepsPoints,
+            text: `${formatSteps(item.steps)} steps`,
+          },
+        ],
+      };
+    }
+    if (item.workoutPoints >= item.stepsPoints) {
+      return {
+        title,
+        data: [
+          {
+            points: item.workoutPoints,
+            text: getWorkoutText(item.workoutPoints),
+          },
+          {
+            text: `${formatSteps(item.steps)} steps`,
+          },
+        ],
+      };
+    }
+    return {
+      title,
       data: [
-        { text: '30 minutes medium intensity workout', points: 5 },
-        { text: '1,500 steps' },
+        {
+          points: item.stepsPoints,
+          text: `${formatSteps(item.steps)} steps`,
+        },
+        {
+          text: getWorkoutText(item.workoutPoints),
+        },
       ],
-    },
-    {
-      title: '21 DEC 2020',
-      data: [
-        { text: '30 minutes high intensity workout', points: 8 },
-        { text: '1,500 steps' },
-      ],
-    },
-  ];
+    };
+  });
   return (
     <View style={styles.container}>
       <SectionList
-        sections={data}
+        sections={sections}
         keyExtractor={(item) => item.text}
         renderItem={({ item }) => (
           <View style={styles.row}>
