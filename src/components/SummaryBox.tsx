@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { formatSteps } from '../lib/format';
 import { brandBackground, fontStandard } from '../styles/colors';
 
 interface Props {
@@ -15,17 +16,22 @@ export default function SummaryBox({
 }: Props) {
   const largestPoints =
     stepsPoints > workoutPoints ? stepsPoints : workoutPoints;
+  const title =
+    largestPoints > 0
+      ? `${largestPoints} points gained by ${
+          stepsPoints > workoutPoints ? 'walking' : 'workout'
+        }`
+      : '0 points gained';
   return (
     <View style={styles.container}>
       <Text style={styles.h2}>Today</Text>
-      <Text style={styles.h1}>
-        {largestPoints} points gained by{' '}
-        {stepsPoints > workoutPoints ? 'walking' : 'workout'}
-      </Text>
+      <Text style={styles.h1}>{title}</Text>
       <Text style={styles.h3}>
         {largestPoints === 8
           ? "You've reached your daily goal."
-          : `${12500 - steps} more steps to reach your daily goal`}
+          : `${formatSteps(
+              12500 - steps,
+            )} more steps or 30 mins of high intensity workout to reach your daily goal`}
       </Text>
     </View>
   );
@@ -42,9 +48,10 @@ const styles = StyleSheet.create({
       width: 0,
       height: 4,
     },
-    shadowRadius: 4,
+    shadowRadius: 2,
     shadowOpacity: 0.1,
-    marginBottom: 30,
+    marginVertical: 30,
+    marginHorizontal: 30,
   },
   h1: {
     color: fontStandard,

@@ -14,12 +14,21 @@ interface Props {
 }
 
 export default function WeekGraph({ data }: Props) {
+  const total = data.reduce(
+    (acc, val) =>
+      acc +
+      (val.stepsPoints > val.workoutPoints
+        ? val.stepsPoints
+        : val.workoutPoints),
+    0,
+  );
+  const weeklyTotal = total > 40 ? 40 : total;
   return (
     <View style={styles.container}>
       <Text style={styles.h2}>
         {formatWeekRange(data[data.length - 1].date)}
       </Text>
-      <Text style={styles.h1}>16 points</Text>
+      <Text style={styles.h1}>{weeklyTotal} points</Text>
       <View style={styles.barsContainer}>
         {days.map((day, index) => {
           const val = data[data.length - 1 - index] || {};
@@ -52,6 +61,7 @@ export default function WeekGraph({ data }: Props) {
 
 const styles = StyleSheet.create({
   container: {
+    marginBottom: 20,
     paddingHorizontal: 24,
     paddingVertical: 20,
     backgroundColor: brandBackground,
@@ -61,8 +71,9 @@ const styles = StyleSheet.create({
       width: 0,
       height: 4,
     },
-    shadowRadius: 4,
+    shadowRadius: 2,
     shadowOpacity: 0.1,
+    marginHorizontal: 30,
   },
   h1: {
     color: fontStandard,

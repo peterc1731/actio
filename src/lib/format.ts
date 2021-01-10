@@ -28,13 +28,12 @@ const getDateString = (date: Date) =>
 
 export const formatWeekRange = (start: Date) => {
   const end = new Date();
-  end.setDate(start.getDate() + 7);
+  end.setDate(start.getDate() + 6);
   return `${getDateString(start)} - ${getDateString(end)}`;
 };
 
 export const formatDate = (date: Date) => {
   const today = new Date();
-  console.log(today.toString());
   if (date.getDate() === today.getDate()) {
     return 'TODAY';
   }
@@ -59,4 +58,35 @@ export const formatSteps = (steps: number) => {
   }
 
   return `${str.slice(0, str.length - 3)},${str.slice(str.length - 3)}`;
+};
+
+export const getCurrentWeek = () => {
+  const today = new Date(Date.now());
+  const currentDay = today.getDay();
+
+  const start = new Date(Date.now());
+  if (currentDay === 0) {
+    start.setDate(today.getDate() - 6);
+  } else {
+    start.setDate(today.getDate() - (currentDay - 1));
+  }
+
+  const end = new Date(Date.now());
+  end.setDate(start.getDate() + 6);
+
+  return {
+    start,
+    end,
+  };
+};
+
+export const getWeekIterator = (): Date[] => {
+  const { start } = getCurrentWeek();
+  const today = new Date(Date.now());
+  const iterator: Date[] = [];
+  while (today.getTime() >= start.getTime()) {
+    iterator.push(new Date(today.getTime()));
+    today.setDate(today.getDate() - 1);
+  }
+  return iterator;
 };

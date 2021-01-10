@@ -6,9 +6,12 @@ import { HealthItem } from '../types/health';
 
 interface Props {
   data: HealthItem[];
+  header: React.ReactElement;
+  refresh: () => void;
+  loading: boolean;
 }
 
-export default function WeekList({ data }: Props) {
+export default function WeekList({ data, header, refresh, loading }: Props) {
   const sections = data.map((item) => {
     const title = formatDate(item.date);
     if (item.workoutPoints === 0) {
@@ -66,6 +69,9 @@ export default function WeekList({ data }: Props) {
           <Text style={styles.heading}>{title}</Text>
         )}
         stickySectionHeadersEnabled={false}
+        ListHeaderComponent={header}
+        onRefresh={refresh}
+        refreshing={loading}
       />
     </View>
   );
@@ -79,6 +85,7 @@ const styles = StyleSheet.create({
   },
   heading: {
     marginTop: 20,
+    marginHorizontal: 30,
     fontSize: 12,
     color: fontStandard,
   },
@@ -89,6 +96,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   row: {
+    marginHorizontal: 30,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
