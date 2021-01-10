@@ -678,7 +678,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.peterc.apps.actio;
 				PRODUCT_NAME = Actio;
-				PROVISIONING_PROFILE_SPECIFIER = Actio;
+				PROVISIONING_PROFILE_SPECIFIER = "Actio New";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -706,7 +706,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.peterc.apps.actio;
 				PRODUCT_NAME = Actio;
-				PROVISIONING_PROFILE_SPECIFIER = Actio;
+				PROVISIONING_PROFILE_SPECIFIER = "Actio New";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
