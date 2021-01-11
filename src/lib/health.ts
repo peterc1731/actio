@@ -1,6 +1,6 @@
 import AppleHealthKit, { HealthInputOptions } from 'react-native-health';
 import { HealthItem } from '../types/health';
-import { getMsFromString, getWeekIterator } from './format';
+import { getMsFromString, getWeekIterator } from './date';
 
 const notInitializedError = new Error('health kit not initialized');
 
