@@ -1,6 +1,6 @@
 import AppleHealthKit, { HealthInputOptions } from 'react-native-health';
 import { HealthItem } from '../types/health';
-import { getWeekIterator } from './format';
+import { getMsFromString, getWeekIterator } from './format';
 
 const notInitializedError = new Error('health kit not initialized');
 
@@ -143,9 +143,7 @@ const getWorkoutPoints = async (date: Date) => {
   let points = 0;
   for (const sample of workoutSamples) {
     const length =
-      (new Date(sample.end).getTime() - new Date(sample.start).getTime()) /
-      1000 /
-      60;
+      (getMsFromString(sample.end) - getMsFromString(sample.start)) / 1000 / 60;
     if (length > 30) {
       const avgHr = await getAvgHr(sample.start, sample.end);
       if (avgHr >= 0.6 * maxHR) {

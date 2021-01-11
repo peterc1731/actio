@@ -90,3 +90,6 @@ export const getWeekIterator = (): Date[] => {
   }
   return iterator;
 };
+
+export const getMsFromString = (date: string) =>
+  new Date(date.split('+')[0]).getTime();
