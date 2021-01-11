@@ -18,7 +18,10 @@ const App = () => {
         setData(res);
         RNBootSplash.hide({ fade: true });
       })
-      .catch((err) => setError(err));
+      .catch((err) => {
+        setError(err);
+        RNBootSplash.hide({ fade: true });
+      });
   }, []);
 
   const refresh = () => {

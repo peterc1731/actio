@@ -49,7 +49,14 @@ const getSteps = async (date: Date) =>
       },
       (err, results) => {
         if (err) {
-          return reject(err);
+          if (
+            (err as any).message ===
+            'No data available for the specified predicate.'
+          ) {
+            return resolve(0);
+          } else {
+            return reject(err);
+          }
         }
         return resolve(Math.floor(results.value));
       },

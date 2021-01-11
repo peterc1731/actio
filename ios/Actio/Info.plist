@@ -45,8 +45,6 @@
 	<string></string>
 	<key>UILaunchStoryboardName</key>
 	<string>BootSplash</string>
-	<key>UIMainStoryboardFile</key>
-	<string>BootSplash</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
