@@ -1,7 +1,7 @@
 import React from 'react';
 import { SectionList, StyleSheet, Text, View } from 'react-native';
 import { formatDate, formatSteps, getWorkoutText } from '../lib/format';
-import { fontStandard } from '../styles/colors';
+import { useTheme } from '../styles/styles';
 import { HealthItem } from '../types/health';
 
 interface Props {
@@ -52,6 +52,8 @@ export default function WeekList({ data, header, refresh, loading }: Props) {
       ],
     };
   });
+
+  const { fontStandard } = useTheme();
   return (
     <View style={styles.container}>
       <SectionList
@@ -59,14 +61,18 @@ export default function WeekList({ data, header, refresh, loading }: Props) {
         keyExtractor={(item) => item.text}
         renderItem={({ item }) => (
           <View style={styles.row}>
-            <Text style={styles.body}>{item.text}</Text>
+            <Text style={[styles.body, { color: fontStandard }]}>
+              {item.text}
+            </Text>
             {item.points || item.points === 0 ? (
-              <Text style={styles.body}>{item.points} pts</Text>
+              <Text style={[styles.body, { color: fontStandard }]}>
+                {item.points} pts
+              </Text>
             ) : null}
           </View>
         )}
         renderSectionHeader={({ section: { title } }) => (
-          <Text style={styles.heading}>{title}</Text>
+          <Text style={[styles.heading, { color: fontStandard }]}>{title}</Text>
         )}
         stickySectionHeadersEnabled={false}
         ListHeaderComponent={header}
@@ -87,12 +93,10 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginHorizontal: 30,
     fontSize: 12,
-    color: fontStandard,
   },
   body: {
     fontSize: 14,
     fontWeight: '500',
-    color: fontStandard,
     marginTop: 15,
   },
   row: {

@@ -1,21 +1,29 @@
 import React from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { brandPrimary, fontStandard } from '../styles/colors';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import { useTheme } from '../styles/styles';
 
 interface Props {
   onPress: () => void;
 }
 
 function Start({ onPress }: Props) {
+  const { brandPrimary, fontStandard } = useTheme();
   return (
     <View style={styles.centered}>
-      <Text style={styles.permText}>
-        First, you'll have to grant permissions to access your health data.
+      <Image
+        style={styles.logo}
+        source={require('../../assets/bootsplash_logo.png')}
+      />
+      <Text style={[styles.permText, { color: fontStandard }]}>
+        Smart tracking for active people.
       </Text>
       <Pressable
-        style={({ pressed }) => [styles.button, { opacity: pressed ? 0.6 : 1 }]}
+        style={({ pressed }) => [
+          styles.button,
+          { opacity: pressed ? 0.6 : 1, backgroundColor: brandPrimary },
+        ]}
         onPress={onPress}>
-        <Text style={styles.buttonText}>Continue</Text>
+        <Text style={styles.buttonText}>Allow Data Access</Text>
       </Pressable>
     </View>
   );
@@ -29,10 +37,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
   },
   permText: {
-    color: fontStandard,
-    fontSize: 21,
+    fontSize: 24,
     fontWeight: '400',
     marginBottom: 40,
+    marginTop: 60,
     textAlign: 'center',
   },
   buttonText: {
@@ -41,10 +49,13 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   button: {
-    paddingHorizontal: 60,
-    paddingVertical: 15,
-    borderRadius: 10,
-    backgroundColor: brandPrimary,
+    paddingHorizontal: 50,
+    paddingVertical: 12,
+    borderRadius: 12,
+  },
+  logo: {
+    width: 220,
+    height: 40,
   },
 });
 

@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 import RNBootSplash from 'react-native-bootsplash';
 import Home from './screens/Home';
-import { appBackground } from './styles/colors';
+import { useTheme } from './styles/styles';
 import { getMaxHR, getWeekData, initHealthKit } from './lib/health';
 import { HealthItem } from './types/health';
 import Start from './screens/Start';
 import ErrorScreen from './screens/Error';
 import { isSetUp, setUp } from './lib/persist';
+import { useForegrounded } from './lib/hooks';
 
 const App = () => {
   const [data, setData] = useState<HealthItem[]>([]);
@@ -52,13 +53,26 @@ const App = () => {
       });
   };
 
+  const silentRefresh = () => {
+    getWeekData()
+      .then((res) => {
+        setData(res);
+      })
+      .catch(() => {});
+  };
+
   const completeSetup = () => {
     init().then(() => setUp());
   };
+
+  useForegrounded(silentRefresh);
+
+  const { appBackground } = useTheme();
   return (
     <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView style={styles.container}>
+      <StatusBar barStyle="default" />
+      <SafeAreaView
+        style={[styles.container, { backgroundColor: appBackground }]}>
         {!!data.length && !error && ready && (
           <Home data={data} refresh={refresh} loading={loading} />
         )}
@@ -72,7 +86,6 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: appBackground,
   },
 });
 

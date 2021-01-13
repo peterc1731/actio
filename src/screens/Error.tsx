@@ -1,15 +1,19 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { useTheme } from '../styles/styles';
 
 interface Props {
   message: string;
 }
 
 function ErrorScreen({ message }: Props) {
+  const { error } = useTheme();
   return (
     <View style={styles.centered}>
-      <Text style={styles.errorText}>An error has occurred:</Text>
-      <Text style={styles.errorText}>{message}</Text>
+      <Text style={[styles.errorText, { color: error }]}>
+        An error has occurred:
+      </Text>
+      <Text style={[styles.errorText, { color: error }]}>{message}</Text>
     </View>
   );
 }
@@ -22,7 +26,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
   },
   errorText: {
-    color: 'red',
     fontSize: 25,
     fontWeight: '400',
     marginBottom: 15,

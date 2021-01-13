@@ -1,12 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { days, formatWeekRange } from '../lib/format';
-import {
-  brandAccent,
-  brandBackground,
-  fontStandard,
-  brandAccentLight,
-} from '../styles/colors';
+import { useShadows, useTheme } from '../styles/styles';
 import { HealthItem } from '../types/health';
 
 interface Props {
@@ -23,12 +18,29 @@ export default function WeekGraph({ data }: Props) {
     0,
   );
   const weeklyTotal = total > 40 ? 40 : total;
+  const {
+    brandAccent,
+    brandBackground,
+    fontStandard,
+    brandAccentLight,
+  } = useTheme();
+  const shadow = useShadows();
   return (
-    <View style={styles.container}>
-      <Text style={styles.h2}>
+    <View
+      style={[
+        styles.container,
+        {
+          backgroundColor: brandBackground,
+          shadowColor: fontStandard,
+          ...shadow,
+        },
+      ]}>
+      <Text style={[styles.h2, { color: fontStandard }]}>
         {formatWeekRange(data[data.length - 1].date)}
       </Text>
-      <Text style={styles.h1}>{weeklyTotal} points</Text>
+      <Text style={[styles.h1, { color: fontStandard }]}>
+        {weeklyTotal} points
+      </Text>
       <View style={styles.barsContainer}>
         {days.map((day, index) => {
           const val = data[data.length - 1 - index] || {};
@@ -41,16 +53,24 @@ export default function WeekGraph({ data }: Props) {
               <View
                 style={[
                   styles.barBackground,
-                  { height: points !== undefined ? 100 : 0 },
+                  {
+                    height: points !== undefined ? 100 : 0,
+                    backgroundColor: brandAccentLight,
+                  },
                 ]}>
                 <View
                   style={[
                     styles.bar,
-                    { height: points ? (points / 8) * 100 : 2 },
+                    {
+                      height: points ? (points / 8) * 100 : 2,
+                      backgroundColor: brandAccent,
+                    },
                   ]}
                 />
               </View>
-              <Text style={styles.day}>{day.charAt(0).toUpperCase()}</Text>
+              <Text style={[styles.day, { color: fontStandard }]}>
+                {day.charAt(0).toUpperCase()}
+              </Text>
             </View>
           );
         })}
@@ -64,30 +84,19 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     paddingHorizontal: 24,
     paddingVertical: 20,
-    backgroundColor: brandBackground,
     borderRadius: 10,
-    shadowColor: fontStandard,
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowRadius: 2,
-    shadowOpacity: 0.1,
     marginHorizontal: 30,
   },
   h1: {
-    color: fontStandard,
     fontSize: 16,
     fontWeight: '500',
     marginTop: 5,
   },
   h2: {
-    color: fontStandard,
     fontSize: 14,
     fontWeight: '500',
   },
   day: {
-    color: fontStandard,
     fontSize: 16,
     marginTop: 10,
   },
@@ -107,13 +116,11 @@ const styles = StyleSheet.create({
     width: '100%',
     borderTopLeftRadius: 5,
     borderTopRightRadius: 5,
-    backgroundColor: brandAccent,
   },
   barBackground: {
     position: 'relative',
     borderTopLeftRadius: 5,
     borderTopRightRadius: 5,
-    backgroundColor: brandAccentLight,
     width: '100%',
   },
 });
