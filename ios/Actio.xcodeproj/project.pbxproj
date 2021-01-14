@@ -68,6 +68,7 @@
 		D0A63991259D21FA00EE51E8 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = Actio/BootSplash.storyboard; sourceTree = "<group>"; };
 		D0A639A725AB67D700EE51E8 /* Actio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Actio.entitlements; path = Actio/Actio.entitlements; sourceTree = "<group>"; };
 		D0A639A825AB67D800EE51E8 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		D0EB2AAC25AFD360007CFF77 /* ActioRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = ActioRelease.entitlements; path = Actio/ActioRelease.entitlements; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -129,6 +130,7 @@
 		13B07FAE1A68108700A75B9A /* Actio */ = {
 			isa = PBXGroup;
 			children = (
+				D0EB2AAC25AFD360007CFF77 /* ActioRelease.entitlements */,
 				D0A639A725AB67D700EE51E8 /* Actio.entitlements */,
 				D0A63991259D21FA00EE51E8 /* BootSplash.storyboard */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -665,7 +667,7 @@
 				CODE_SIGN_ENTITLEMENTS = Actio/Actio.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 88PGMJ5GWU;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Actio/Info.plist;
@@ -678,7 +680,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.peterc.apps.actio;
 				PRODUCT_NAME = Actio;
-				PROVISIONING_PROFILE_SPECIFIER = "Actio New";
+				PROVISIONING_PROFILE_SPECIFIER = "Actio Fitness";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -691,10 +693,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Actio/Actio.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Actio/ActioRelease.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 88PGMJ5GWU;
 				INFOPLIST_FILE = Actio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -706,7 +708,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = xyz.peterc.apps.actio;
 				PRODUCT_NAME = Actio;
-				PROVISIONING_PROFILE_SPECIFIER = "Actio New";
+				PROVISIONING_PROFILE_SPECIFIER = "Actio Fitness";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
