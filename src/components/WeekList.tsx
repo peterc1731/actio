@@ -85,7 +85,6 @@ export default function WeekList({ data, header, refresh, loading }: Props) {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 30,
     marginBottom: 10,
     flex: 1,
   },
