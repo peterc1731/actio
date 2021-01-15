@@ -14,8 +14,7 @@ export default function SummaryBox({
   stepsPoints,
   steps,
 }: Props) {
-  const largestPoints =
-    stepsPoints > workoutPoints ? stepsPoints : workoutPoints;
+  const largestPoints = Math.max(stepsPoints, workoutPoints);
   const title =
     largestPoints > 0
       ? `${largestPoints} points gained by ${

@@ -9,6 +9,8 @@ import Start from './screens/Start';
 import ErrorScreen from './screens/Error';
 import { isSetUp, setUp } from './lib/persist';
 import { useForegrounded } from './lib/hooks';
+import { initNotifications } from './lib/notifications';
+import { setUpBackgroundUpdates } from './lib/background';
 
 const App = () => {
   const [data, setData] = useState<HealthItem[]>([]);
@@ -21,6 +23,8 @@ const App = () => {
       await initHealthKit();
       await getMaxHR();
       const res = await getWeekData();
+      initNotifications();
+      setUpBackgroundUpdates();
       setData(res);
       setReady(true);
       RNBootSplash.hide({ fade: true });

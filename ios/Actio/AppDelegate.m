@@ -5,6 +5,8 @@
 #import <React/RCTRootView.h>
 
 #import "RNBootSplash.h"
+#import "RNNotifications.h"
+#import <TSBackgroundFetch/TSBackgroundFetch.h>
 
 #ifdef FB_SONARKIT_ENABLED
 #import <FlipperKit/FlipperClient.h>
@@ -46,10 +48,23 @@ static void InitializeFlipper(UIApplication *application) {
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   
-  //  RN Bootsplash
+  // RN Bootsplash
   [RNBootSplash initWithStoryboard:@"BootSplash" rootView:rootView];
+
+  // RN Notifications
+  [RNNotifications startMonitorNotifications];
+  // RN Background fetch 
+  [[TSBackgroundFetch sharedInstance] didFinishLaunching];
   
   return YES;
+}
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+  [RNNotifications didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+  [RNNotifications didFailToRegisterForRemoteNotificationsWithError:error];
 }
 
 - (NSURL *)sourceURLForBridge:(RCTBridge *)bridge

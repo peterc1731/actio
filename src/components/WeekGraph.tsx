@@ -10,11 +10,7 @@ interface Props {
 
 export default function WeekGraph({ data }: Props) {
   const total = data.reduce(
-    (acc, val) =>
-      acc +
-      (val.stepsPoints > val.workoutPoints
-        ? val.stepsPoints
-        : val.workoutPoints),
+    (acc, val) => acc + Math.max(val.stepsPoints, val.workoutPoints),
     0,
   );
   const weeklyTotal = total > 40 ? 40 : total;

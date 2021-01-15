@@ -6,7 +6,7 @@ const theme = <const>{
   appBackground: ['#FFFFFF', '#151515'],
   brandBackground: ['#FAF7F3', '#252525'],
   brandAccent: '#CAA6D6',
-  brandAccentLight: '#E4D2EA',
+  brandAccentLight: '#CAA6D650',
   error: 'red',
 };
 
