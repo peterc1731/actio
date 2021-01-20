@@ -32,7 +32,7 @@ export default function WeekGraph({ data }: Props) {
         },
       ]}>
       <Text style={[styles.h2, { color: fontStandard }]}>
-        {formatWeekRange(data[data.length - 1].date)}
+        {formatWeekRange(data[data.length - 1]?.date)}
       </Text>
       <Text style={[styles.h1, { color: fontStandard }]}>
         {weeklyTotal} points
@@ -50,8 +50,8 @@ export default function WeekGraph({ data }: Props) {
                 style={[
                   styles.barBackground,
                   {
-                    height: points !== undefined ? 100 : 0,
-                    backgroundColor: brandAccentLight,
+                    backgroundColor:
+                      points !== undefined ? brandAccentLight : 'transparent',
                   },
                 ]}>
                 <View
@@ -118,5 +118,6 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 5,
     borderTopRightRadius: 5,
     width: '100%',
+    height: 100,
   },
 });

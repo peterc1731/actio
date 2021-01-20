@@ -26,7 +26,10 @@ export const days = [
 const getDateString = (date: Date) =>
   `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
 
-export const formatWeekRange = (start: Date) => {
+export const formatWeekRange = (start?: Date) => {
+  if (!start) {
+    return ' - ';
+  }
   const end = new Date();
   end.setDate(start.getDate() + 6);
   return `${getDateString(start)} - ${getDateString(end)}`;

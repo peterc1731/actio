@@ -53,6 +53,7 @@ static void InitializeFlipper(UIApplication *application) {
 
   // RN Notifications
   [RNNotifications startMonitorNotifications];
+  
   // RN Background fetch 
   [[TSBackgroundFetch sharedInstance] didFinishLaunching];
   

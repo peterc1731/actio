@@ -23,7 +23,7 @@ function Start({ onPress }: Props) {
           { opacity: pressed ? 0.6 : 1, backgroundColor: brandPrimary },
         ]}
         onPress={onPress}>
-        <Text style={styles.buttonText}>Allow Data Access</Text>
+        <Text style={styles.buttonText}>Get Started</Text>
       </Pressable>
     </View>
   );

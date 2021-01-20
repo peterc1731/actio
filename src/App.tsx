@@ -11,6 +11,8 @@ import { isSetUp, setUp } from './lib/persist';
 import { useForegrounded } from './lib/hooks';
 import { initNotifications } from './lib/notifications';
 import { setUpBackgroundUpdates } from './lib/background';
+import { initTracking, trackEvent } from './lib/tracking';
+import { shouldIgnore } from './lib/errors';
 
 const App = () => {
   const [data, setData] = useState<HealthItem[]>([]);
@@ -20,18 +22,24 @@ const App = () => {
 
   const init = async () => {
     try {
+      await initTracking();
       await initHealthKit();
       await getMaxHR();
       const res = await getWeekData();
       initNotifications();
       setUpBackgroundUpdates();
+      trackEvent('init');
       setData(res);
       setReady(true);
-      RNBootSplash.hide({ fade: true });
     } catch (err) {
-      setError(err);
-      RNBootSplash.hide({ fade: true });
+      trackEvent('error', { message: err.message });
+      if (!shouldIgnore(err)) {
+        setError(err);
+      } else {
+        setReady(true);
+      }
     }
+    RNBootSplash.hide({ fade: true });
   };
 
   useEffect(() => {
@@ -46,6 +54,7 @@ const App = () => {
 
   const refresh = () => {
     setLoading(true);
+    trackEvent('manual_refresh');
     getWeekData()
       .then((res) => {
         setData(res);
@@ -58,6 +67,7 @@ const App = () => {
   };
 
   const silentRefresh = () => {
+    trackEvent('automatic_refresh');
     getWeekData()
       .then((res) => {
         setData(res);
@@ -77,7 +87,7 @@ const App = () => {
       <StatusBar barStyle="default" />
       <SafeAreaView
         style={[styles.container, { backgroundColor: appBackground }]}>
-        {!!data.length && !error && ready && (
+        {!error && ready && (
           <Home data={data} refresh={refresh} loading={loading} />
         )}
         {!!error && <ErrorScreen message={error.message} />}

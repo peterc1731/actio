@@ -19,6 +19,8 @@
 		33C7F8365A2DD180A353640A /* libPods-Actio-ActioTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8170FC897EFDD3EDCDE8B6 /* libPods-Actio-ActioTests.a */; };
 		9558D389877221CAEB9D8C04 /* libPods-Actio-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C272A304BB9C1687B513939 /* libPods-Actio-tvOSTests.a */; };
 		B4C1942F67F76AA84DB6D264 /* libPods-Actio-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31A939C1D37CB34B5C5209C6 /* libPods-Actio-tvOS.a */; };
+		D070359825B37D3A006F44CA /* RNBackgroundFetch+AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D070359725B37D3A006F44CA /* RNBackgroundFetch+AppDelegate.m */; };
+		D070359925B37D3A006F44CA /* RNBackgroundFetch+AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D070359725B37D3A006F44CA /* RNBackgroundFetch+AppDelegate.m */; };
 		D0A63992259D21FA00EE51E8 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A63991259D21FA00EE51E8 /* BootSplash.storyboard */; };
 		D0A639A925AB67D800EE51E8 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A639A825AB67D800EE51E8 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
@@ -65,6 +67,7 @@
 		935BF706539B66DD67301052 /* libPods-Actio.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Actio.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EF8983053296D2A001F207 /* Pods-Actio-ActioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Actio-ActioTests.release.xcconfig"; path = "Target Support Files/Pods-Actio-ActioTests/Pods-Actio-ActioTests.release.xcconfig"; sourceTree = "<group>"; };
 		A120C25C3845EC3E2DEEFFA1 /* Pods-Actio-ActioTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Actio-ActioTests.debug.xcconfig"; path = "Target Support Files/Pods-Actio-ActioTests/Pods-Actio-ActioTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D070359725B37D3A006F44CA /* RNBackgroundFetch+AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RNBackgroundFetch+AppDelegate.m"; path = "../node_modules/react-native-background-fetch/ios/RNBackgroundFetch/RNBackgroundFetch+AppDelegate.m"; sourceTree = "<group>"; };
 		D0A63991259D21FA00EE51E8 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = Actio/BootSplash.storyboard; sourceTree = "<group>"; };
 		D0A639A725AB67D700EE51E8 /* Actio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Actio.entitlements; path = Actio/Actio.entitlements; sourceTree = "<group>"; };
 		D0A639A825AB67D800EE51E8 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -130,6 +133,7 @@
 		13B07FAE1A68108700A75B9A /* Actio */ = {
 			isa = PBXGroup;
 			children = (
+				D070359725B37D3A006F44CA /* RNBackgroundFetch+AppDelegate.m */,
 				D0EB2AAC25AFD360007CFF77 /* ActioRelease.entitlements */,
 				D0A639A725AB67D700EE51E8 /* Actio.entitlements */,
 				D0A63991259D21FA00EE51E8 /* BootSplash.storyboard */,
@@ -429,10 +433,20 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Actio/Pods-Actio-resources.sh",
+				"${PODS_ROOT}/Mixpanel-swift/Sources/MiniNotificationViewController.xib",
+				"${PODS_ROOT}/Mixpanel-swift/Sources/placeholder-image.png",
+				"${PODS_ROOT}/Mixpanel-swift/Sources/TakeoverNotificationViewController~ipad.xib",
+				"${PODS_ROOT}/Mixpanel-swift/Sources/TakeoverNotificationViewController~iphonelandscape.xib",
+				"${PODS_ROOT}/Mixpanel-swift/Sources/TakeoverNotificationViewController~iphoneportrait.xib",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MiniNotificationViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/placeholder-image.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TakeoverNotificationViewController~ipad.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TakeoverNotificationViewController~iphonelandscape.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TakeoverNotificationViewController~iphoneportrait.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,10 +483,20 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Actio-ActioTests/Pods-Actio-ActioTests-resources.sh",
+				"${PODS_ROOT}/Mixpanel-swift/Sources/MiniNotificationViewController.xib",
+				"${PODS_ROOT}/Mixpanel-swift/Sources/placeholder-image.png",
+				"${PODS_ROOT}/Mixpanel-swift/Sources/TakeoverNotificationViewController~ipad.xib",
+				"${PODS_ROOT}/Mixpanel-swift/Sources/TakeoverNotificationViewController~iphonelandscape.xib",
+				"${PODS_ROOT}/Mixpanel-swift/Sources/TakeoverNotificationViewController~iphoneportrait.xib",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MiniNotificationViewController.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/placeholder-image.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TakeoverNotificationViewController~ipad.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TakeoverNotificationViewController~iphonelandscape.nib",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TakeoverNotificationViewController~iphoneportrait.nib",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,6 +601,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D070359825B37D3A006F44CA /* RNBackgroundFetch+AppDelegate.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
@@ -586,6 +611,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D070359925B37D3A006F44CA /* RNBackgroundFetch+AppDelegate.m in Sources */,
 				2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */,
 				2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */,
 			);
@@ -667,7 +693,7 @@
 				CODE_SIGN_ENTITLEMENTS = Actio/Actio.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 88PGMJ5GWU;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Actio/Info.plist;
@@ -696,7 +722,7 @@
 				CODE_SIGN_ENTITLEMENTS = Actio/ActioRelease.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 88PGMJ5GWU;
 				INFOPLIST_FILE = Actio/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

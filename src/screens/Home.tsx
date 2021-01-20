@@ -12,7 +12,12 @@ interface Props {
 }
 
 const Home = ({ data, refresh, loading }: Props) => {
-  return data.length ? (
+  const today = data[0] || {
+    workoutPoints: 0,
+    stepsPoints: 0,
+    steps: 0,
+  };
+  return (
     <View style={styles.container}>
       <WeekList
         data={data}
@@ -21,16 +26,16 @@ const Home = ({ data, refresh, loading }: Props) => {
         header={
           <>
             <SummaryBox
-              workoutPoints={data[0].workoutPoints}
-              stepsPoints={data[0].stepsPoints}
-              steps={data[0].steps}
+              workoutPoints={today.workoutPoints}
+              stepsPoints={today.stepsPoints}
+              steps={today.steps}
             />
             <WeekGraph data={data} />
           </>
         }
       />
     </View>
-  ) : null;
+  );
 };
 
 const styles = StyleSheet.create({
