@@ -17,8 +17,6 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* ActioTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ActioTests.m */; };
 		33C7F8365A2DD180A353640A /* libPods-Actio-ActioTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8170FC897EFDD3EDCDE8B6 /* libPods-Actio-ActioTests.a */; };
-		9558D389877221CAEB9D8C04 /* libPods-Actio-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C272A304BB9C1687B513939 /* libPods-Actio-tvOSTests.a */; };
-		B4C1942F67F76AA84DB6D264 /* libPods-Actio-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31A939C1D37CB34B5C5209C6 /* libPods-Actio-tvOS.a */; };
 		D070359825B37D3A006F44CA /* RNBackgroundFetch+AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D070359725B37D3A006F44CA /* RNBackgroundFetch+AppDelegate.m */; };
 		D070359925B37D3A006F44CA /* RNBackgroundFetch+AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D070359725B37D3A006F44CA /* RNBackgroundFetch+AppDelegate.m */; };
 		D0A63992259D21FA00EE51E8 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A63991259D21FA00EE51E8 /* BootSplash.storyboard */; };
@@ -47,8 +45,6 @@
 		00E356EE1AD99517003FC87E /* ActioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ActioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* ActioTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActioTests.m; sourceTree = "<group>"; };
-		049DF34D3334EBA196693405 /* Pods-Actio-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Actio-tvOS.release.xcconfig"; path = "Target Support Files/Pods-Actio-tvOS/Pods-Actio-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		1332ED454C661C23DEC5A76E /* Pods-Actio-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Actio-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-Actio-tvOSTests/Pods-Actio-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Actio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Actio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Actio/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Actio/AppDelegate.m; sourceTree = "<group>"; };
@@ -59,10 +55,6 @@
 		1E1DDE7224730BC90B794953 /* Pods-Actio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Actio.release.xcconfig"; path = "Target Support Files/Pods-Actio/Pods-Actio.release.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* Actio-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Actio-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* Actio-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Actio-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		31A939C1D37CB34B5C5209C6 /* libPods-Actio-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Actio-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3DC94DCA68210E1105E8AEAA /* Pods-Actio-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Actio-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-Actio-tvOS/Pods-Actio-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		69F1706BC6D8AAD856D075A5 /* Pods-Actio-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Actio-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Actio-tvOSTests/Pods-Actio-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6C272A304BB9C1687B513939 /* libPods-Actio-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Actio-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D8170FC897EFDD3EDCDE8B6 /* libPods-Actio-ActioTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Actio-ActioTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		935BF706539B66DD67301052 /* libPods-Actio.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Actio.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94EF8983053296D2A001F207 /* Pods-Actio-ActioTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Actio-ActioTests.release.xcconfig"; path = "Target Support Files/Pods-Actio-ActioTests/Pods-Actio-ActioTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,7 +90,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4C1942F67F76AA84DB6D264 /* libPods-Actio-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +97,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9558D389877221CAEB9D8C04 /* libPods-Actio-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,8 +145,6 @@
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				935BF706539B66DD67301052 /* libPods-Actio.a */,
 				6D8170FC897EFDD3EDCDE8B6 /* libPods-Actio-ActioTests.a */,
-				31A939C1D37CB34B5C5209C6 /* libPods-Actio-tvOS.a */,
-				6C272A304BB9C1687B513939 /* libPods-Actio-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -201,10 +189,6 @@
 				1E1DDE7224730BC90B794953 /* Pods-Actio.release.xcconfig */,
 				A120C25C3845EC3E2DEEFFA1 /* Pods-Actio-ActioTests.debug.xcconfig */,
 				94EF8983053296D2A001F207 /* Pods-Actio-ActioTests.release.xcconfig */,
-				3DC94DCA68210E1105E8AEAA /* Pods-Actio-tvOS.debug.xcconfig */,
-				049DF34D3334EBA196693405 /* Pods-Actio-tvOS.release.xcconfig */,
-				69F1706BC6D8AAD856D075A5 /* Pods-Actio-tvOSTests.debug.xcconfig */,
-				1332ED454C661C23DEC5A76E /* Pods-Actio-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -221,6 +205,7 @@
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
 				5F19F2549D9327D9C8FC2DE2 /* [CP] Copy Pods Resources */,
+				6EB8C162D4579362923E61C8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -243,6 +228,7 @@
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				41A3981205C210E8A6541C09 /* [CP] Copy Pods Resources */,
+				33DFCFD529F8608A47F491EC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -257,7 +243,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Actio-tvOS" */;
 			buildPhases = (
-				56B570C77C73F4CD161FD456 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -277,7 +262,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "Actio-tvOSTests" */;
 			buildPhases = (
-				F80FE88293158C34A53E2CD0 /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -426,6 +410,24 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
+		33DFCFD529F8608A47F491EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Actio/Pods-Actio-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Actio/Pods-Actio-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		41A3981205C210E8A6541C09 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -452,28 +454,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Actio/Pods-Actio-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		56B570C77C73F4CD161FD456 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Actio-tvOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5F19F2549D9327D9C8FC2DE2 /* [CP] Copy Pods Resources */ = {
@@ -504,6 +484,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Actio-ActioTests/Pods-Actio-ActioTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6EB8C162D4579362923E61C8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Actio-ActioTests/Pods-Actio-ActioTests-frameworks.sh",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OpenSSL.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Actio-ActioTests/Pods-Actio-ActioTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7DAF6B7CCFDE63912BE3D268 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -520,28 +518,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Actio-ActioTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F80FE88293158C34A53E2CD0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Actio-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -742,7 +718,6 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3DC94DCA68210E1105E8AEAA /* Pods-Actio-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -770,7 +745,6 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 049DF34D3334EBA196693405 /* Pods-Actio-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -798,7 +772,6 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69F1706BC6D8AAD856D075A5 /* Pods-Actio-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -825,7 +798,6 @@
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1332ED454C661C23DEC5A76E /* Pods-Actio-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -882,6 +854,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -942,6 +915,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
